@@ -1,0 +1,11 @@
+# Network Load Statistical Analyzer
+# Core Python dependencies for statistical engine and automated tests
+
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.11.0
+matplotlib>=3.8.0
+pytest>=8.0.0
+
+# Optional: Streamlit dashboard (alternative UI)
+streamlit>=1.30.0

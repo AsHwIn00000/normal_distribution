@@ -1,0 +1,16 @@
+# Python virtual environment
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# Pytest cache
+.pytest_cache/
+
+# Large dataset files (>50MB)
+*.parquet
+
+# Operating System files
+.DS_Store
+Thumbs.db
