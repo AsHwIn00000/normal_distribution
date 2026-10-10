@@ -1047,7 +1047,13 @@ let currentDatasetName = "sample_network_load.csv (288 rows)";
 // INITIALIZATION
 // =========================================================
 window.addEventListener("DOMContentLoaded", () => {{
-    loadDatasetText(DEFAULT_CSV_DATA, "sample_network_load.csv (288 rows)");
+    // Page starts ready for user to upload/select a CSV file from their folder
+    document.getElementById("activeDatasetLabel").textContent = "No CSV loaded — Please upload/select a CSV file";
+    document.getElementById("activeDatasetTag").style.background = "#FEF3C7";
+    document.getElementById("activeDatasetTag").style.borderColor = "#FCD34D";
+    document.getElementById("activeDatasetTag").style.color = "#92400E";
+    const dot = document.querySelector("#activeDatasetTag .dot");
+    if (dot) dot.style.background = "#D97706";
 }});
 
 function toggleSettingsPanel() {{

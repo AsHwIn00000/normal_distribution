@@ -631,9 +631,9 @@
             <p>Statistical Modeling of Network Traffic Using Normal Distribution</p>
         </div>
         <div>
-            <div class="active-dataset-tag" id="activeDatasetTag">
-                <span class="dot"></span>
-                <span id="activeDatasetLabel">sample_network_load.csv (288 rows)</span>
+            <div class="active-dataset-tag" id="activeDatasetTag" style="background:#FEF3C7; border-color:#FCD34D; color:#92400E;">
+                <span class="dot" style="background:#D97706;"></span>
+                <span id="activeDatasetLabel">No Dataset Loaded — Select CSV File</span>
             </div>
         </div>
     </header>
@@ -1289,7 +1289,7 @@ const DEFAULT_CSV_DATA = `timestamp,bandwidth_mbps,packet_count_per_sec,cpu_util
 2026-10-01 23:55:00,422.93,31854,69.6,21.0,node-dist-cluster-01`;
 
 // State
-let rawCSVData = DEFAULT_CSV_DATA;
+let rawCSVData = "";
 let parsedRows = [];
 let columnHeaders = [];
 let currentLoadValues = [];
@@ -1300,13 +1300,19 @@ let distChartInstance = null;
 let anomalyPieChartInstance = null;
 let qqChartInstance = null;
 let histScaleMode = "density";
-let currentDatasetName = "sample_network_load.csv (288 rows)";
+let currentDatasetName = "No CSV file loaded";
 
 // =========================================================
 // INITIALIZATION
 // =========================================================
 window.addEventListener("DOMContentLoaded", () => {
-    loadDatasetText(DEFAULT_CSV_DATA, "sample_network_load.csv (288 rows)");
+    // Page starts ready for user to upload/select a CSV file from their folder
+    document.getElementById("activeDatasetLabel").textContent = "No CSV loaded — Please upload/select a CSV file";
+    document.getElementById("activeDatasetTag").style.background = "#FEF3C7";
+    document.getElementById("activeDatasetTag").style.borderColor = "#FCD34D";
+    document.getElementById("activeDatasetTag").style.color = "#92400E";
+    const dot = document.querySelector("#activeDatasetTag .dot");
+    if (dot) dot.style.background = "#D97706";
 });
 
 function toggleSettingsPanel() {
@@ -1368,6 +1374,11 @@ function loadDatasetText(csvText, label) {
     rawCSVData = csvText;
     currentDatasetName = label;
     document.getElementById("activeDatasetLabel").textContent = label;
+    document.getElementById("activeDatasetTag").style.background = "#DCFCE7";
+    document.getElementById("activeDatasetTag").style.borderColor = "#86EFAC";
+    document.getElementById("activeDatasetTag").style.color = "#166534";
+    const dot = document.querySelector("#activeDatasetTag .dot");
+    if (dot) dot.style.background = "#16A34A";
 
     const parsed = parseCSV(csvText);
     columnHeaders = parsed.headers;
@@ -1468,7 +1479,10 @@ function runAnalysis() {
 
     document.querySelectorAll(".unit-span").forEach(el => el.textContent = unit);
 
-    if (!loadCol) return;
+    if (!parsedRows || parsedRows.length === 0 || !loadCol) {
+        alert("Please upload or select a CSV file from your folder first!");
+        return;
+    }
 
     const validEntries = [];
     parsedRows.forEach((r, idx) => {
