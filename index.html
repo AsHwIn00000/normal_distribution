@@ -726,31 +726,31 @@
     <div class="kpi-row">
         <div class="kpi-card">
             <div class="kpi-label">Valid Observations</div>
-            <div class="kpi-val" id="kpiN">288</div>
-            <div class="kpi-subtext" id="kpiCleanSub">Total usable measurements: 288 (0 missing)</div>
+            <div class="kpi-val" id="kpiN">--</div>
+            <div class="kpi-subtext" id="kpiCleanSub">Awaiting dataset upload</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label">Mean Network Load (x̄)</div>
             <div class="kpi-val">
-                <span id="kpiMean">452.36</span>
-                <span class="unit-span" id="unitSpanMean">Mbps</span>
+                <span id="kpiMean">--</span>
+                <span class="unit-span" id="unitSpanMean"></span>
             </div>
             <div class="kpi-subtext">Baseline average traffic across observations</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label" id="kpiStdLabel">Standard Deviation (s)</div>
             <div class="kpi-val">
-                <span id="kpiStd">43.63</span>
-                <span class="unit-span" id="unitSpanStd">Mbps</span>
+                <span id="kpiStd">--</span>
+                <span class="unit-span" id="unitSpanStd"></span>
             </div>
             <div class="kpi-subtext" id="kpiStdSub">Dispersion around mean (Bessel's N-1)</div>
         </div>
         <div class="kpi-card">
             <div class="kpi-label" id="kpiAnomLabel">Flagged Anomalies (|Z| &gt; 3.0)</div>
             <div class="kpi-val" style="color: var(--danger);" id="kpiAnom">
-                4 <span style="font-size:0.95rem; font-weight:600; color:var(--text-muted);">(1.4%)</span>
+                --
             </div>
-            <div class="kpi-subtext" id="kpiAnomSub">3 High Spikes | 1 Low Dip</div>
+            <div class="kpi-subtext" id="kpiAnomSub">Awaiting dataset upload</div>
         </div>
     </div>
 
@@ -802,10 +802,10 @@
     <div id="tab-anomalies" class="tab-content">
         <!-- Summary Badges -->
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
-            <span class="active-dataset-tag" style="color:var(--danger);">Flagged Outliers: <strong id="anomTotalPill">4</strong></span>
-            <span class="active-dataset-tag" style="color:var(--danger);">High Spikes: <strong id="anomHighPill">3</strong></span>
-            <span class="active-dataset-tag" style="color:var(--info);">Low Dips: <strong id="anomLowPill">1</strong></span>
-            <span class="active-dataset-tag" style="color:var(--success);">Normal In-Bounds: <strong id="anomNormalPill">284</strong></span>
+            <span class="active-dataset-tag" style="color:var(--danger);">Flagged Outliers: <strong id="anomTotalPill">--</strong></span>
+            <span class="active-dataset-tag" style="color:var(--danger);">High Spikes: <strong id="anomHighPill">--</strong></span>
+            <span class="active-dataset-tag" style="color:var(--info);">Low Dips: <strong id="anomLowPill">--</strong></span>
+            <span class="active-dataset-tag" style="color:var(--success);">Normal In-Bounds: <strong id="anomNormalPill">--</strong></span>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 20px;" class="anomaly-grid-layout">
@@ -882,35 +882,35 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-card-label">Sample Size (N)</div>
-                    <div class="stat-card-val" id="gridN">288</div>
+                    <div class="stat-card-val" id="gridN">--</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-card-label">Mean (x̄)</div>
-                    <div class="stat-card-val" id="gridMean">452.36</div>
+                    <div class="stat-card-val" id="gridMean">--</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-card-label">Median (Q2)</div>
-                    <div class="stat-card-val" id="gridMedian">450.80</div>
+                    <div class="stat-card-val" id="gridMedian">--</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-card-label">Sample Std (s, N-1)</div>
-                    <div class="stat-card-val" id="gridSampleStd">43.63</div>
+                    <div class="stat-card-val" id="gridSampleStd">--</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-card-label">Population Std (σ)</div>
-                    <div class="stat-card-val" id="gridPopStd">43.55</div>
+                    <div class="stat-card-val" id="gridPopStd">--</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-card-label">Variance (s²)</div>
-                    <div class="stat-card-val" id="gridVar">1903.6</div>
+                    <div class="stat-card-val" id="gridVar">--</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-card-label">Minimum Observed</div>
-                    <div class="stat-card-val" id="gridMin">298.50</div>
+                    <div class="stat-card-val" id="gridMin">--</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-card-label">Maximum Observed</div>
-                    <div class="stat-card-val" id="gridMax">610.20</div>
+                    <div class="stat-card-val" id="gridMax">--</div>
                 </div>
             </div>
         </div>
