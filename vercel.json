@@ -1,11 +1,9 @@
 {
-  "version": 2,
-  "name": "network-load-statistical-analyzer",
   "cleanUrls": true,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
